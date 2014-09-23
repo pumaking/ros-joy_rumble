@@ -6,7 +6,6 @@
   <author email="florian.nolden@googlemail.com">Florian Nolden</author>
   <maintainer email="florian.nolden@googlemail.com">Florian Nolden</maintainer>
   <url type="website">https://github.com/Flos/joy_rumble</url>
-  <repository type="git">git@github.com:Flos/joy_rumble.git</repository>
   <license>MIT</license>
 
   <buildtool_depend>catkin</buildtool_depend>
