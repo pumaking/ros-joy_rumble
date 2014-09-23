@@ -1,0 +1,1 @@
+joy_rumble is a ROS node which is used to give haptic feedback to a teleoperater of a Robot.
