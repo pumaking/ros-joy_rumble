@@ -1,0 +1,4 @@
+<launch>
+    <param name="event" type="str" value="/dev/input/event2" />
+    <node name="joy_rumble_node" pkg="joy_rumble" type="joy_rumble_node"/>
+</launch>
