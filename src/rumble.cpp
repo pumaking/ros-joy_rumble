@@ -45,7 +45,7 @@ bool Rumble::open_device(){
 	ff_fd = open(event.c_str(), O_RDWR);
 
 	if (ff_fd == -1) {
-		ROS_ERROR_NAMED("joy_rumble","Open device \"%s\" failed", event.c_str());
+		ROS_ERROR_NAMED("joy_rumble","Open device \"%s\" failed, try: \"cat /proc/bus/input/devices\" to find the proper event", event.c_str());
 		return false;
 	}
 	if (ioctl(ff_fd, EVIOCGEFFECTS, &nr_simultaneous_effects) < 0) {
