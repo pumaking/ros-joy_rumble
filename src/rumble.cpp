@@ -24,8 +24,8 @@ void
 Rumble::init(ros::NodeHandle &nh){
 	nh.param<std::string>("event", event, "/dev/input/event6");
 	nh.param<int>("intervall", update_rate, 5);
-	nh.param<std::string>("sub_topic_imu", sub_topic_imu, "/imu/data");
-	nh.param<std::string>("sub_topic_rumble", sub_topic_rumble, "/rumble_message");
+	nh.param<std::string>("sub_topic_imu", sub_topic_imu, "imu/data");
+	nh.param<std::string>("sub_topic_rumble", sub_topic_rumble, "rumble_message");
 	nh.param<double>("velo_delta_min", velo_delta[0], 0.05);
 	nh.param<double>("velo_delta_max", velo_delta[1], 0.15);
 	nh.param<double>("acc_delta_min", acc_delta[0], 0.5);

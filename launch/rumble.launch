@@ -1,4 +1,8 @@
 <launch>
-    <param name="event" type="str" value="/dev/input/event2" />
-    <node name="joy_rumble_node" pkg="joy_rumble" type="joy_rumble_node"/>
+  <arg name="event" default="/dev/input/event7"/>
+  <arg name="rumble_topic" default="rumble_message"/>
+  <param name="event" type="str" value="$(arg event)"/>
+  <node name="joy_rumble_node" pkg="joy_rumble" type="joy_rumble_node">
+    <remap from="rumble_message" to="$(arg rumble_topic)"/>
+  </node>
 </launch>
