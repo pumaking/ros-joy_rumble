@@ -26,7 +26,7 @@ def get_possible_joys(devs):
   for dev in devs:
     name_file = os.path.join(get_dev_dir(dev), "name")
     if not os.path.isfile(name_file):
-      raise Exception("ERROR: Could not name of %s" % dev)
+      raise Exception("ERROR: Could not find name of %s; %s not a file." % (dev, name_file))
 
     name = open(name_file).read()
     if "mouse" not in name and "Mouse" not in name:
