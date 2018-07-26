@@ -22,7 +22,8 @@ Rumble::Rumble() {
 
 void
 Rumble::init(ros::NodeHandle &nh){
-	nh.param<std::string>("event", event, "/dev/input/event6");
+	ros::NodeHandle pnh("~");
+	pnh.param<std::string>("event", event, "/dev/input/event6");
 	nh.param<int>("intervall", update_rate, 5);
 	nh.param<std::string>("sub_topic_imu", sub_topic_imu, "imu/data");
 	nh.param<std::string>("sub_topic_rumble", sub_topic_rumble, "rumble_message");

@@ -1,8 +1,11 @@
 <launch>
-  <arg name="event" default="/dev/input/event7"/>
   <arg name="rumble_topic" default="rumble_message"/>
-  <param name="event" type="str" value="$(arg event)"/>
-  <node name="joy_rumble_node" pkg="joy_rumble" type="joy_rumble_node">
+  <arg name="js_dev" default=""/> <!-- Leave blank for auto detect. -->
+
+  <node name="joy_rumble_node" pkg="joy_rumble" type="joy_rumble_node"
+        launch-prefix="
+        /bin/bash -c '_EVENT=`$(find joy_rumble)/launch/find_js_event.py $(arg js_dev)` &amp;&amp;
+                      $* _event:=${_EVENT}' --">
     <remap from="rumble_message" to="$(arg rumble_topic)"/>
   </node>
 </launch>
